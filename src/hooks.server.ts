@@ -1,5 +1,9 @@
 import type { Handle } from '@sveltejs/kit';
 
+import { initKv } from '$lib/server/count.ts';
+
+await initKv();
+
 export const handle: Handle = async ({ event, resolve }) => {
   const { request, locals } = event;
 
