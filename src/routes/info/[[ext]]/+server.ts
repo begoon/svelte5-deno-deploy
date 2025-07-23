@@ -1,5 +1,7 @@
 import { json, type RequestEvent } from '@sveltejs/kit';
 
+import { get } from '$lib/server/count.ts';
+
 export async function GET(request: RequestEvent) {
   const ext = request.params.ext;
   if (ext == 'error') return json({ status: 'error' }, { status: 418 });
